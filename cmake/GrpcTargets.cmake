@@ -54,6 +54,8 @@ userver_venv_setup(
     UNIQUE
 )
 set(ENV{USERVER_GRPC_PYTHON_BINARY} "${USERVER_GRPC_PYTHON_BINARY}")
+file(WRITE "${USERVER_DIR}/scripts/grpc/.env" 
+  "USERVER_GRPC_PYTHON_BINARY=${USERVER_GRPC_PYTHON_BINARY}\n")
 
 if(NOT PROTOBUF_PROTOC)
   message(FATAL_ERROR "protoc not found")
